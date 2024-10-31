@@ -40,6 +40,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init("v5b07SsTqzQBdCIST"); // Reemplaza con tu propio User ID de EmailJS
+    </script>
+    
 
     
 
@@ -1116,7 +1121,7 @@
       <!-- Menu End -->
 
       <!-- Reservation Start -->
-      <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+      <div id="contactForm" class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
         <div class="row g-0">
           <div class="col-md-6">
             <div class="video">
@@ -1139,7 +1144,7 @@
                 Reserva Pedido
               </h5>
               <h1 class="text-white mb-4">Cotiza en línea</h1>
-              <form>
+              <form id="contactForm">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-floating">
@@ -1148,6 +1153,7 @@
                         class="form-control"
                         id="name"
                         placeholder="Your Name"
+                        required
                       />
                       <label for="name">Tu Nombre</label>
                     </div>
@@ -1159,6 +1165,7 @@
                         class="form-control"
                         id="email"
                         placeholder="Your Email"
+                        required
                       />
                       <label for="email">Tu E-mail</label>
                     </div>
@@ -1176,13 +1183,14 @@
                         placeholder="Date & Time"
                         data-target="#date3"
                         data-toggle="datetimepicker"
+                        required
                       />
                       <label for="datetime">Fecha & Tiempo</label>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-floating">
-                      <select class="form-select" id="select1">
+                      <select class="form-select" id="select1" required>
                         <option value="1">Chanco</option>
                         <option value="2">Gauda</option>
                         <option value="3">Mozarella</option>
@@ -1197,6 +1205,7 @@
                         placeholder="Special Request"
                         id="message"
                         style="height: 100px"
+                        required
                       ></textarea>
                       <label for="message">Pedido Especial</label>
                     </div>
@@ -1212,6 +1221,35 @@
           </div>
         </div>
       </div>
+      <script type="text/javascript">
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+  
+  // Obtener datos del formulario
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const datetime = document.getElementById("datetime").value;
+  const type = document.getElementById("select1").value;
+  const message = document.getElementById("message").value;
+
+  // Enviar los datos a través de EmailJS
+  emailjs.send("service_z2pdd9i", "template_189al2q", {
+    from_name: name,
+    from_email: email,
+    date_time: datetime,
+    product_type: type,
+    message: message,
+  })
+  .then(function(response) {
+    alert("¡Correo enviado exitosamente!");
+    document.getElementById("contactForm").reset(); // Limpia el formulario
+  }, function(error) {
+    alert("Hubo un error al enviar el correo: " + JSON.stringify(error));
+  });
+});
+
+      </script>
+      
 
       <div
         class="modal fade"
@@ -1451,5 +1489,12 @@ const app = initializeApp(firebaseConfig);
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("v5b07SsTqzQBdCIST"); // Reemplaza con tu User ID de EmailJS
+  })();
+</script>
+
   </body>
 </html>
