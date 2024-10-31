@@ -40,7 +40,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
+    
     
 
     <!-- Template Stylesheet -->
@@ -1139,75 +1141,49 @@
                 Reserva Pedido
               </h5>
               <h1 class="text-white mb-4">Cotiza en línea</h1>
-              <form>
+              <form id="reservationForm">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="Your Name"
-                      />
+                      <input type="text" class="form-control" id="name" name="from_name" placeholder="Tu Nombre" required />
                       <label for="name">Tu Nombre</label>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-floating">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="Your Email"
-                      />
+                      <input type="email" class="form-control" id="email" name="reply_to" placeholder="Tu E-mail" required />
                       <label for="email">Tu E-mail</label>
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div
-                      class="form-floating date"
-                      id="date3"
-                      data-target-input="nearest"
-                    >
-                      <input
-                        type="text"
-                        class="form-control datetimepicker-input"
-                        id="datetime"
-                        placeholder="Date & Time"
-                        data-target="#date3"
-                        data-toggle="datetimepicker"
-                      />
-                      <label for="datetime">Fecha & Tiempo</label>
+                    <div class="form-floating">
+                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Tu Teléfono" required />
+                      <label for="phone">Tu Teléfono</label>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-floating">
-                      <select class="form-select" id="select1">
-                        <option value="1">Chanco</option>
-                        <option value="2">Gauda</option>
-                        <option value="3">Mozarella</option>
+                      <select class="form-select" id="select1" name="product_type" required>
+                        <option value="Chanco">Chanco</option>
+                        <option value="Gauda">Gauda</option>
+                        <option value="Mozarella">Mozarella</option>
                       </select>
                       <label for="select1">Selecciona tipo</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="Special Request"
-                        id="message"
-                        style="height: 100px"
-                      ></textarea>
+                      <textarea class="form-control" id="message" name="message" placeholder="Pedido Especial" style="height: 100px" required></textarea>
                       <label for="message">Pedido Especial</label>
                     </div>
                   </div>
                   <div class="col-12">
-                    <button class="btn btn-primary w-100 py-3" type="submit">
-                      Compra y Cotiza Aqui
-                    </button>
+                    <button class="btn btn-primary w-100 py-3" type="submit">Compra y Cotiza Aquí</button>
                   </div>
                 </div>
               </form>
+              
+              
             </div>
           </div>
         </div>
@@ -1269,7 +1245,7 @@
               <div class="d-flex align-items-center">
                 <img
                   class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-1.jpg"
+                  src="https://firebasestorage.googleapis.com/v0/b/vaquitaazul-f571a.appspot.com/o/La%20moderna.png?alt=media&token=3e02a191-e623-480f-b409-d4bb3e33b4cb"
                   style="width: 50px; height: 50px"
                 />
                 <div class="ps-3">
@@ -1286,7 +1262,7 @@
               <div class="d-flex align-items-center">
                 <img
                   class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-2.jpg"
+                  src="https://firebasestorage.googleapis.com/v0/b/vaquitaazul-f571a.appspot.com/o/pucon-749x734.png?alt=media&token=6990dbb6-546b-4655-bcc1-bda6763bf540"
                   style="width: 50px; height: 50px"
                 />
                 <div class="ps-3">
@@ -1303,7 +1279,7 @@
               <div class="d-flex align-items-center">
                 <img
                   class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-3.jpg"
+                  src="https://firebasestorage.googleapis.com/v0/b/vaquitaazul-f571a.appspot.com/o/scrnli_u2d29bsUcPcKz1.png?alt=media&token=353d5229-c898-4d2d-9226-1600fe4ddfcd"
                   style="width: 50px; height: 50px"
                 />
                 <div class="ps-3">
@@ -1320,7 +1296,7 @@
               <div class="d-flex align-items-center">
                 <img
                   class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-4.jpg"
+                  src="https://firebasestorage.googleapis.com/v0/b/vaquitaazul-f571a.appspot.com/o/scrnli_HvhMJSh3bp7n9n.png?alt=media&token=967f8594-7ba1-487a-b77f-b2bfb1af18d7"
                   style="width: 50px; height: 50px"
                 />
                 <div class="ps-3">
@@ -1417,7 +1393,57 @@
         ><i class="bi bi-arrow-up"></i
       ></a>
     </div>
-      <script>
+
+
+<!-- SCRIPT EMLAIJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init('v5b07SsTqzQBdCIST'); // Inicializa EmailJS con tu User ID
+
+  document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const btn = document.querySelector('button[type="submit"]');
+    btn.textContent = 'Enviando...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_189al2q';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.textContent = 'Compra y Cotiza Aquí';
+        // Modal de éxito con SweetAlert2
+        Swal.fire({
+          icon: 'success',
+          title: '¡Correo enviado exitosamente!',
+          text: 'Nos pondremos en contacto contigo pronto.',
+          confirmButtonText: 'Aceptar',
+          customClass: {
+            confirmButton: 'btn btn-primary' // Clase personalizada para el botón
+          },
+          buttonsStyling: false // Aplica las clases personalizadas
+        });
+        document.getElementById('reservationForm').reset(); // Limpia el formulario
+      }, (err) => {
+        btn.textContent = 'Compra y Cotiza Aquí';
+        // Modal de error con SweetAlert2
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al enviar el correo',
+          text: 'Por favor, inténtalo de nuevo más tarde.',
+          confirmButtonText: 'Aceptar',
+          customClass: {
+            confirmButton: 'btn btn-danger' // Clase personalizada para el botón
+          },
+          buttonsStyling: false
+        });
+      });
+  });
+</script>
+
+
+<!--   SCRIPT FIREbASE  -->      
+   <script>
       // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -1451,5 +1477,6 @@ const app = initializeApp(firebaseConfig);
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
