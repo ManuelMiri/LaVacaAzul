@@ -446,6 +446,41 @@
   transform: none;
 }
 
+
+
+/* Asegura espaciado uniforme entre productos */
+.tab-content .col-lg-6 {
+  padding-bottom: 1.5rem; /* Espaciado inferior uniforme */
+}
+
+/* Ajustes para el contenedor de cada producto */
+.d-flex.align-items-center {
+  padding: 10px; /* Asegura espaciado interno */
+  margin-bottom: 10px; /* Espaciado inferior entre productos */
+  border: 1px solid #ddd; /* Opcional: agrega un borde para separar visualmente cada producto */
+  border-radius: 8px; /* Bordes redondeados para cada contenedor */
+}
+
+/* Asegura que las imágenes tengan el mismo tamaño y espaciado */
+.d-flex.align-items-center img {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px; /* Espaciado derecho entre la imagen y el texto */
+}
+
+/* Espaciado interno para el contenedor de texto */
+.w-100.d-flex.flex-column.text-start.ps-4 {
+  padding-left: 15px; /* Espaciado consistente a la izquierda del texto */
+}
+
+/* Ajustes de espaciado en los encabezados y precios */
+.d-flex.justify-content-between.border-bottom.pb-2 {
+  padding-bottom: 5px; /* Asegura que el espaciado inferior sea uniforme */
+  margin-bottom: 10px;
+}
+
+
+
 /* Ajustes adicionales */
 .container .row.g-4 .card {
   margin-bottom: 1.5rem; /* Espacio entre tarjetas */
