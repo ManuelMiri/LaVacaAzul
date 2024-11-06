@@ -130,7 +130,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 400px) {
   .navbar-dark {
     position: absolute;
     width: 100%;
@@ -145,6 +145,9 @@
     background: var(--dark) !important;
   }
 }
+
+/
+
 
 /*** Hero Header ***/
 .hero-header {
@@ -491,9 +494,28 @@
   transform: scale(2.1); /* Aumenta el tamaño al 110% */
 }
 
+/***** Watsapp  Icono Styles ******/
 
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Asegura que el botón quede por encima de otros elementos */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Suaviza el efecto de hover */
+}
 
+.whatsapp-button img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Hace el botón circular */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+}
 
+.whatsapp-button:hover {
+  transform: scale(1.1); /* Aumenta el tamaño ligeramente al pasar el ratón */
+}
 
 
 /*** Footer ***/
