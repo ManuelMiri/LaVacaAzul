@@ -389,7 +389,7 @@
 }
 
 
-/*** Cards ***/
+/*** Cards Pagina SERVICE ***/
 /* Estilos generales de la tarjeta */
 .card {
   width: 100%; /* Asegura que ocupe el ancho de la columna */
@@ -410,13 +410,17 @@
 
 .card figcaption {
   grid-area: cards;
-  background: #ffef91;
+  background: rgba(255, 239, 145, 0.7);
   transform: translateY(calc(100% - 4rem));
   transition: transform 600ms;
   padding: 0 20px 20px 20px;
   color: #0F172B;
   font-weight: 400;
+  
 }
+
+
+
 
 .card h3 {
   height: 4rem;
@@ -450,7 +454,7 @@
 }
 
 
-/***** PAGINA SERVICE- CARDS HERO ***** *ANCHOR - */
+/***** PAGINA INDEX- CARDS HERO ***** *ANCHOR - */
 
 /* Asegura espaciado uniforme entre productos */
 .tab-content .col-lg-6 {
