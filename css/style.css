@@ -407,11 +407,11 @@
 
 .card figcaption {
   grid-area: cards;
-  background: #000000e0;
+  background: #ffef91;
   transform: translateY(calc(100% - 4rem));
   transition: transform 600ms;
   padding: 0 20px 20px 20px;
-  color: #FFF;
+  color: #0F172B;
   font-weight: 400;
 }
 
@@ -447,18 +447,18 @@
 }
 
 
+/***** PAGINA SERVICE- CARDS HERO ***** *ANCHOR - */
 
 /* Asegura espaciado uniforme entre productos */
 .tab-content .col-lg-6 {
   padding-bottom: 1.5rem; /* Espaciado inferior uniforme */
 }
 
-/* Ajustes para el contenedor de cada producto */
+/* Ajustes para el contenedor de cada producto sin borde */
 .d-flex.align-items-center {
-  padding: 10px; /* Asegura espaciado interno */
+  padding: 10px; /* Espaciado interno */
   margin-bottom: 10px; /* Espaciado inferior entre productos */
-  border: 1px solid #ddd; /* Opcional: agrega un borde para separar visualmente cada producto */
-  border-radius: 8px; /* Bordes redondeados para cada contenedor */
+  border-radius: 8px; /* Bordes redondeados */
 }
 
 /* Asegura que las imágenes tengan el mismo tamaño y espaciado */
@@ -470,21 +470,29 @@
 
 /* Espaciado interno para el contenedor de texto */
 .w-100.d-flex.flex-column.text-start.ps-4 {
-  padding-left: 15px; /* Espaciado consistente a la izquierda del texto */
+  padding-left: 15px; /* Espaciado constante a la izquierda del texto */
 }
 
 /* Ajustes de espaciado en los encabezados y precios */
 .d-flex.justify-content-between.border-bottom.pb-2 {
-  padding-bottom: 5px; /* Asegura que el espaciado inferior sea uniforme */
+  padding-bottom: 5px; /* Espaciado inferior uniforme */
   margin-bottom: 10px;
 }
 
-
-
-/* Ajustes adicionales */
-.container .row.g-4 .card {
-  margin-bottom: 1.5rem; /* Espacio entre tarjetas */
+/* Efecto de zoom en la imagen al pasar el ratón */
+.d-flex.align-items-center img {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px; /* Espaciado derecho */
+  transition: transform 0.3s ease; /* Transición suave */
 }
+
+.d-flex.align-items-center img:hover {
+  transform: scale(2.1); /* Aumenta el tamaño al 110% */
+}
+
+
+
 
 
 
