@@ -390,68 +390,57 @@
 
 
 /*** Cards Pagina SERVICE ***/
-/* Estilos generales de la tarjeta */
+/* Efecto Hover en la Tarjeta */
 .card {
-  width: 100%; /* Asegura que ocupe el ancho de la columna */
-  height: 100%; /* Altura completa */
-  display: grid;
-  grid-template-rows: minmax(100%, 1fr);
-  grid-template-areas: "cards";
-  overflow: hidden;
-  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+ 
 }
 
-.card img {
-  grid-area: cards;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card figcaption {
-  grid-area: cards;
-  background: rgba(255, 239, 145, 0.7);
-  transform: translateY(calc(100% - 4rem));
-  transition: transform 600ms;
-  padding: 0 20px 20px 20px;
-  color: #0F172B;
-  font-weight: 400;
-  
-}
-
-
-
-
-.card h3 {
-  height: 4rem;
+.card-container {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: 22px;
-  text-transform: uppercase;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples filas */
+  justify-content: center; /* Centra las tarjetas horizontalmente   
+*/
 }
 
-.card p {
-  font-size: 14px;
-  padding: 10px 0;
+.card {
+  flex: 1; /* Cada tarjeta ocupará el mismo espacio disponible */
+  margin: 10px; /* Agrega un margen para separar las tarjetas */
 }
 
-.card button {
-  float: right;
-  border: 0;
+.card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta ligeramente */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+/* Efecto Zoom en la Imagen */
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1); /* Zoom al pasar el cursor */
+}
+
+/* Estilos para el Botón Comprar */
+.buy-button {
+  background-color: var(--primary); /* Usa el color primario */
   color: #fff;
-  background: transparent;
-  font-size: 14px;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
   text-transform: uppercase;
-  font-weight: 600;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.card:hover figcaption {
-  transform: none;
+.buy-button:hover {
+  background-color: var(--accent); /* Cambia a otro color en hover */
 }
+
+
 
 
 /***** PAGINA INDEX- CARDS HERO ***** *ANCHOR - */
