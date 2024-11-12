@@ -394,14 +394,18 @@
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ocupa toda la altura disponible */
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que la imagen y el contenido se ajusten al borde redondeado */
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples filas */
-  justify-content: center; /* Centra las tarjetas horizontalmente   
-*/
+  justify-content: center; /* Centra las tarjetas horizontalmente */
 }
 
 .card {
@@ -414,9 +418,15 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
 }
 
-/* Efecto Zoom en la Imagen */
+/* Estilos para la imagen en la tarjeta */
 .card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 200px;
   transition: transform 0.3s ease;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .card:hover .card-img-top {
@@ -425,7 +435,7 @@
 
 /* Estilos para el Botón Comprar */
 .buy-button {
-  background-color: var(--primary); /* Usa el color primario */
+  background-color: var(--primary);
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -437,7 +447,14 @@
 }
 
 .buy-button:hover {
-  background-color: var(--accent); /* Cambia a otro color en hover */
+  background-color: var(--accent);
+}
+
+/* Estilos para el precio */
+.product-price {
+  font-size: 1.25rem; /* Tamaño más grande */
+  font-weight: bold; /* Texto en negrita */
+  color: #FF5733; /* Color llamativo */
 }
 
 
