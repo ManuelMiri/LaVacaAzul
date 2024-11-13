@@ -402,11 +402,14 @@
   display: flex;
   flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples filas */
   justify-content: center; /* Centra las tarjetas horizontalmente */
+  
 }
 
 .card {
   flex: 1; /* Cada tarjeta ocupará el mismo espacio disponible */
-  margin: 10px; /* Agrega un margen para separar las tarjetas */
+  
+  margin-top: 50PX;
+  
 }
 
 .card:hover {
@@ -456,7 +459,7 @@
 
 
 
-/***** PAGINA INDEX- CARDS HERO ***** *ANCHOR - */
+/***** PAGINA INDEX- CARDS HERO ***** *ANCHOR -CARDS HERO  */
 
 /* Asegura espaciado uniforme entre productos */
 .tab-content .col-lg-6 {
@@ -500,7 +503,7 @@
   transform: scale(2.1); /* Aumenta el tamaño al 110% */
 }
 
-/***** Watsapp  Icono Styles ******/
+/***** Watsapp  Icono Styles  ******/ 
 
 /* Estilos para el botón de WhatsApp */
 .whatsapp-button {
