@@ -17,13 +17,7 @@
   font-weight: 700 !important;
 }
 
-.back-to-top {
-  position: fixed;
-  display: none;
-  right: 45px;
-  bottom: 45px;
-  z-index: 99;
-}
+
 
 /*** Spinner ***/
 #spinner {
@@ -242,6 +236,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
 }
 
 .video .btn-play {
@@ -370,7 +365,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-}
+  
+  }
 
 .testimonial-carousel .owl-dot {
   position: relative;
