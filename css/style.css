@@ -221,7 +221,7 @@
   color: var(--light) !important;
 }
 
-/*** Food Menu ***/
+/*** Quesos Menu ***/
 .nav-pills .nav-item .active {
   border-bottom: 2px solid var(--primary);
 }
