@@ -1371,51 +1371,7 @@
       <!-- Footer End -->
      
 <!-- ANCHOR SCRIPT EMLAIJS -->
-<!-- SCRIPT EMLAIJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  emailjs.init('v5b07SsTqzQBdCIST'); // Inicializa EmailJS con tu User ID
 
-  document.getElementById('reservationForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const btn = document.querySelector('button[type="submit"]');
-    btn.textContent = 'Enviando...';
-
-    const serviceID = 'default_service';
-    const templateID = 'template_189al2q';
-
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        btn.textContent = 'Compra y Cotiza Aquí';
-        // Modal de éxito con SweetAlert2
-        Swal.fire({
-          icon: 'success',
-          title: '¡Correo enviado exitosamente!',
-          text: 'Nos pondremos en contacto contigo pronto.',
-          confirmButtonText: 'Aceptar',
-          customClass: {
-            confirmButton: 'btn btn-primary' // Clase personalizada para el botón
-          },
-          buttonsStyling: false // Aplica las clases personalizadas
-        });
-        document.getElementById('reservationForm').reset(); // Limpia el formulario
-      }, (err) => {
-        btn.textContent = 'Compra y Cotiza Aquí';
-        // Modal de error con SweetAlert2
-        Swal.fire({
-          icon: 'error',
-          title: 'Error al enviar el correo',
-          text: 'Por favor, inténtalo de nuevo más tarde.',
-          confirmButtonText: 'Aceptar',
-          customClass: {
-            confirmButton: 'btn btn-danger' // Clase personalizada para el botón
-          },
-          buttonsStyling: false
-        });
-      });
-  });
-</script>
 
 
 <!--   SCRIPT FIREbASE  -->      
