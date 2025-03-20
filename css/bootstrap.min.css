@@ -1,4 +1,4 @@
-/*!
+/*
  * Bootstrap v5.0.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -330,6 +330,8 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
 }
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -381,6 +383,8 @@ legend + * {
 [type="search"] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
+  -moz-appearance: button;
+  appearance: button;
 }
 ::-webkit-search-decoration {
   -webkit-appearance: none;
